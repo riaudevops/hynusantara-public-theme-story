@@ -53,11 +53,11 @@ into the {body} of the default.hbs template --}}
 
             {{!-- Email subscribe form at the bottom of the page --}}
             {{#if @labs.subscribers}}
-            <section class="subscribe-form">
-                <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
-                <p>Get the latest posts delivered right to your inbox</p>
-                {{subscribe_form placeholder="youremail@example.com"}}
-            </section>
+            <!--<section class="subscribe-form">
+                <h3 class="subscribe-form-title">Subscribe {{@site.title}}</h3>
+                <p>Dapatkan <i>update</i> artikel terbaru langsung di email kamu.</p>
+                {{subscribe_form placeholder="emailku@contoh.com"}}
+            </section>-->
             {{/if}}
 
             <footer class="post-full-footer">
@@ -77,7 +77,7 @@ into the {body} of the default.hbs template --}}
 
             {{!--
             <section class="post-full-comments">
-                If you want to embed comments, this is a good place to do it!
+
             </section>
             --}}
 
@@ -116,7 +116,7 @@ into the {body} of the default.hbs template --}}
                         </ul>
                     </div>
                     <footer class="read-next-card-footer">
-                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
+                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='Belum ada artikel' singular='Hanya ada % artikel' plural='Semua ada % artikel'}} →</a>
                     </footer>
                 </article>
                 {{/if}}
@@ -208,4 +208,6 @@ $(document).ready(function () {
 
 });
 </script>
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+<script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"5517fb789acf011db31a360b0","lid":"08d35482c2","uniqueMethods":true}) })</script>
 {{/contentFor}}
